@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Hotels - Rosewood</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">The Rosewood Retreat</div>
+            <button class="hamburger">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="booked.html">Hotels</a></li>
+                <li><a href="reserved.html">My Bookings</a></li>
+            </ul>
+        </nav>
+        <div class="page-banner">
+            <h2>Explore Our Exquisite Hotels</h2>
+            <div class="search-bar">
+                <input type="text" id="hotel-search-input" placeholder="Search available hotels">
+                <button type="button" id="hotel-search-button">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="available-hotels">
+        <div class="hotel-grid" id="available-hotels-grid">
+            <div class="hotel-card" data-name="Rosewood Grand">
+                <!-- Changed img src to book4 for drag-and-drop -->
+                <img src="book4.jpg" alt="Rosewood Grand" id="book4">
+                <h3>Rosewood Grand</h3>
+                <p>₹3,800/night</p>
+                <button class="reserve-btn" data-hotel="Rosewood Grand">Reserve Now</button>
+            </div>
+            <div class="hotel-card" data-name="Azure Bayview">
+                <!-- Changed img src to book5 for drag-and-drop -->
+                <img src="book5.jpeg" alt="Azure Bayview" id="book5">
+                <h3>Azure Bayview</h3>
+                <p>₹4,500/night</p>
+                <button class="reserve-btn" data-hotel="Azure Bayview">Reserve Now</button>
+            </div>
+            <div class="hotel-card" data-name="Sunset Oasis">
+                <!-- Changed img src to book6 for drag-and-drop -->
+                <img src="book6.webp" alt="Sunset Oasis" id="book6">
+                <h3>Sunset Oasis</h3>
+                <p>₹3,100/night</p>
+                <button class="reserve-btn" data-hotel="Sunset Oasis">Reserve Now</button>
+            </div>
+            <div class="hotel-card" data-name="Ivory Retreat">
+                <!-- Changed img src to book7 for drag-and-drop -->
+                <img src="book7.jpeg" alt="Ivory Retreat" id="book7">
+                <h3>Ivory Retreat</h3>
+                <p>₹2,900/night</p>
+                <button class="reserve-btn" data-hotel="Ivory Retreat">Reserve Now</button>
+            </div>
+            <div class="hotel-card" data-name="Lavender Lodge">
+                <!-- Changed img src to book8 for drag-and-drop -->
+                <img src="book8.jpeg" alt="Lavender Lodge" id="book8">
+                <h3>Lavender Lodge</h3>
+                <p>₹3,600/night</p>
+                <button class="reserve-btn" data-hotel="Lavender Lodge">Reserve Now</button>
+            </div>
+            <div class="hotel-card" data-name="Golden Sands">
+                <!-- Changed img src to book9 for drag-and-drop -->
+                <img src="book9.jpeg" alt="Golden Sands" id="book9">
+                <h3>Golden Sands</h3>
+                <p>₹4,200/night</p>
+                <button class="reserve-btn" data-hotel="Golden Sands">Reserve Now</button>
+            </div>
+            <div class="hotel-card" data-name="Whispering Pines">
+                <!-- Changed img src to book10 for drag-and-drop -->
+                <img src="book10.jpeg" alt="Whispering Pines" id="book10">
+                <h3>Whispering Pines</h3>
+                <p>₹3,300/night</p>
+                <button class="reserve-btn" data-hotel="Whispering Pines">Reserve Now</button>
+            </div>
+            <div class="hotel-card" data-name="Oceanic View">
+                <!-- Changed img src to book11 for drag-and-drop -->
+                <img src="book11.jpeg" alt="Oceanic View" id="book11">
+                <h3>Oceanic View</h3>
+                <p>₹4,800/night</p>
+                <button class="reserve-btn" data-hotel="Oceanic View">Reserve Now</button>
+            </div>
+            <div class="hotel-card" data-name="Blossom Resort">
+                <!-- Changed img src to book12 for drag-and-drop -->
+                <img src="book12.jpeg" alt="Blossom Resort" id="book12">
+                <h3>Blossom Resort</h3>
+                <p>₹3,500/night</p>
+                <button class="reserve-btn" data-hotel="Blossom Resort">Reserve Now</button>
+            </div>
+            <div class="hotel-card" data-name="Rustic Charm">
+                <!-- Changed img src to book13 for drag-and-drop -->
+                <img src="book13.jpeg" alt="Rustic Charm" id="book13">
+                <h3>Rustic Charm</h3>
+                <p>₹2,700/night</p>
+                <button class="reserve-btn" data-hotel="Rustic Charm">Reserve Now</button>
+            </div>
+            <div class="hotel-card" data-name="Coral Reef">
+                <!-- Changed img src to book14 for drag-and-drop -->
+                <img src="book14.webp" alt="Coral Reef" id="book14">
+                <h3>Coral Reef</h3>
+                <p>₹4,100/night</p>
+                <button class="reserve-btn" data-hotel="Coral Reef">Reserve Now</button>
+            </div>
+            <div class="hotel-card" data-name="Sunshine Suites">
+                <!-- Changed img src to book15 for drag-and-drop -->
+                <img src="book15.jpg" alt="Sunshine Suites" id="book15">
+                <h3>Sunshine Suites</h3>
+                <p>₹3,900/night</p>
+                <button class="reserve-btn" data-hotel="Sunshine Suites">Reserve Now</button>
+            </div>
+        </div>
+
+        <div id="reservation-form" class="modal">
+            <form class="modal-content animate" id="reserve-form">
+                <span onclick="document.getElementById('reservation-form').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <h3>Reservation Details</h3>
+                <input type="hidden" id="hotel-name" name="hotel" value="">
+                <label for="name"><b>Name</b></label>
+                <input type="text" placeholder="Enter your name" name="name" required>
+
+                <label for="email"><b>Email</b></label>
+                <input type="email" placeholder="Enter your email" name="email" required>
+
+                <label for="checkin"><b>Check-in Date</b></label>
+                <input type="date" name="checkin" required>
+
+                <label for="checkout"><b>Check-out Date</b></label>
+                <input type="date" name="checkout" required>
+
+                <label for="guests"><b>Number of Guests</b></label>
+                <input type="number" placeholder="Enter number of guests" name="guests" min="1" required>
+
+                <button type="submit" class="submit-btn">Confirm Reservation</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 The Rosewood Retreat. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

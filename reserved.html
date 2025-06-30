@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings - Rosewoodt</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Removed responsive.css as it's now merged into style.css -->
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">The Rosewood Retreat</div>
+            <button class="hamburger">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="booked.html">Hotels</a></li>
+                <li><a href="reserved.html">My Bookings</a></li>
+            </ul>
+        </nav>
+        <div class="page-banner">
+            <h2>Your Confirmed Bookings</h2>
+        </div>
+    </header>
+
+    <section class="my-bookings">
+        <div class="booking-list" id="bookings-container">
+            </div>
+        <p class="no-bookings" id="no-bookings-message">No bookings yet. <a href="booked.html">Explore hotels now!</a></p>
+
+        <div id="manage-modal" class="modal">
+            <form class="modal-content animate" id="manage-form">
+                <span onclick="document.getElementById('manage-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <h3>Manage Booking</h3>
+                <input type="hidden" id="manage-booking-id" name="bookingId" value="">
+
+                <label for="manage-checkin"><b>Check-in Date</b></label>
+                <input type="date" id="manage-checkin" name="checkin" required>
+
+                <label for="manage-checkout"><b>Check-out Date</b></label>
+                <input type="date" id="manage-checkout" name="checkout" required>
+
+                <label for="manage-guests"><b>Number of Guests</b></label>
+                <input type="number" id="manage-guests" placeholder="Enter number of guests" name="guests" min="1" required>
+
+                <div class="modal-buttons">
+                    <button type="submit" class="submit-btn">Update Booking</button>
+                    <button type="button" class="manage-btn" onclick="cancelBooking()">Cancel Booking</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 The Rosewood Retreat. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

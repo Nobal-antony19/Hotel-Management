@@ -1,0 +1,461 @@
+/* style.css */
+
+/* Color Palette:
+   Dark Red-Rose: #880808 (main accent, buttons)
+   Mild Black: #1a1a1a (background, text)
+   Lighter Black/Dark Grey: #333333 (secondary background, card background)
+   Off-White/Light Grey: #eeeeee (text on dark backgrounds, input fields)
+   Subtle Rose: #c25e5e (hover states, borders)
+*/
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a; /* Mild Black */
+    color: #eeeeee; /* Off-White */
+    line-height: 1.6;
+}
+
+header {
+    background-color: #880808; /* Dark Red-Rose */
+    color: #fff;
+    padding: 1rem 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #c25e5e; /* Subtle Rose */
+}
+
+.hamburger {
+    display: none; /* Hidden by default, shown in responsive.css */
+    font-size: 1.5rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-image: linear-gradient(rgba(136, 8, 8, 0.6), rgba(26, 26, 26, 0.2)), url('https://placehold.co/1200x400/880808/eeeeee?text=Luxury%20Stay'); /* Dark Red-Rose overlay */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero .moto {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #eee;
+}
+
+.search-bar {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.search-bar input[type="text"] {
+    flex-grow: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    background-color: #eeeeee; /* Off-White for input */
+    color: #1a1a1a;
+}
+
+.search-bar button {
+    background-color: #c25e5e; /* Subtle Rose */
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #880808; /* Dark Red-Rose */
+}
+
+.featured-hotels, .available-hotels, .my-bookings {
+    padding: 2rem;
+    text-align: center;
+}
+
+.featured-hotels h2, .available-hotels h2, .my-bookings h2, .page-banner h2 {
+    color: #c25e5e; /* Subtle Rose */
+    margin-bottom: 1.5rem;
+}
+
+.hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.hotel-card {
+    background-color: #333333; /* Lighter Black/Dark Grey */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    color: #eeeeee; /* Off-White for text on cards */
+}
+
+.hotel-card:hover {
+    transform: scale(1.02);
+}
+
+.hotel-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-bottom: 1px solid #c25e5e; /* Subtle Rose border for image */
+}
+
+.hotel-card h3 {
+    padding: 1rem;
+    margin: 0;
+    font-size: 1.2rem;
+    color: #eeeeee;
+}
+
+.hotel-card p {
+    padding: 0 1rem 1rem;
+    margin: 0;
+    color: #cccccc; /* Slightly darker grey for body text */
+}
+
+.hotel-card a, .reserve-btn, .submit-btn, .manage-btn {
+    display: block;
+    background-color: #880808; /* Dark Red-Rose */
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.hotel-card a:hover, .reserve-btn:hover, .submit-btn:hover, .manage-btn:hover {
+    background-color: #c25e5e; /* Subtle Rose */
+}
+
+.page-banner {
+    background-color: #333333; /* Lighter Black/Dark Grey */
+    color: #c25e5e; /* Subtle Rose */
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #333333; /* Lighter Black/Dark Grey */
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #880808; /* Dark Red-Rose border */
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4), 0 6px 20px 0 rgba(0,0,0,0.39);
+    color: #eeeeee;
+}
+
+.close {
+    color: #c25e5e; /* Subtle Rose */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #880808; /* Dark Red-Rose */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h3 {
+    color: #c25e5e; /* Subtle Rose */
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #eeeeee;
+    font-weight: bold;
+}
+
+.modal-content input[type=text],
+.modal-content input[type=email],
+.modal-content input[type=date],
+.modal-content input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 1rem;
+    display: inline-block;
+    border: 1px solid #c25e5e; /* Subtle Rose border */
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: #1a1a1a; /* Mild Black */
+    color: #eeeeee;
+}
+
+.modal-content .submit-btn {
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 1rem;
+    border-radius: 4px;
+}
+
+
+/* My Bookings Page Specific Styles */
+.booking-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.booking-card {
+    background-color: #333333; /* Lighter Black/Dark Grey */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    color: #eeeeee;
+}
+
+.booking-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 1rem;
+    border: 1px solid #c25e5e; /* Subtle Rose border for image */
+}
+
+.booking-details h3 {
+    font-size: 1.1rem;
+    margin-top: 0;
+    color: #eeeeee;
+}
+
+.booking-details p {
+    margin-bottom: 0.5rem;
+    color: #cccccc;
+    font-size: 0.9rem;
+}
+
+.booking-details .manage-btn {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    background-color: #c25e5e; /* Subtle Rose */
+}
+
+.booking-details .manage-btn:hover {
+    background-color: #880808; /* Dark Red-Rose */
+}
+
+.no-bookings {
+    color: #cccccc;
+    font-style: italic;
+    margin-top: 2rem;
+}
+
+.no-bookings a {
+    color: #880808; /* Dark Red-Rose */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.no-bookings a:hover {
+    text-decoration: underline;
+    color: #c25e5e;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #333333; /* Lighter Black/Dark Grey */
+    color: #cccccc;
+    /* position: sticky; /* Removed sticky as it can cause layout issues on some screens */
+    bottom: 0;
+    width: 100%;
+    margin-top: 2rem; /* Add some space above the footer */
+}
+
+
+/* Responsive Styles (combined from responsive.css) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .logo {
+        margin-bottom: 1rem;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 1rem;
+        background-color: #880808; /* Dark Red-Rose for collapsed menu */
+        padding-top: 1rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-links li a {
+        padding: 0.5rem 0;
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 1.5rem;
+        color: #fff;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .hero .moto {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .search-bar {
+        max-width: 100%;
+        flex-direction: column;
+    }
+
+    .search-bar input[type="text"],
+    .search-bar button {
+        border-radius: 5px;
+        margin-bottom: 0.5rem;
+        width: 100%; /* Full width for mobile */
+    }
+
+    .search-bar button {
+        border-radius: 5px; /* Adjust border-radius for single button */
+    }
+
+    .hotel-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .booking-list {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .booking-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .booking-card img {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        height: auto;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+}
+
+/* Medium screens (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hotel-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}
